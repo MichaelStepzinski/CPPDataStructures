@@ -118,7 +118,7 @@ public:
     // Req 001 This function shall return the current size of the array
     int Size()
     {
-        return m_backIndex;
+        return static_cast<int>(m_backIndex);
     }
 
     // Req 001 This function shall return the element at the specified index if the specified index is valid

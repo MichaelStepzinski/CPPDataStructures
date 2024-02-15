@@ -7,9 +7,8 @@
 #ifndef DARRAY_H
 #define DARRAY_H
 
-#include <initializer_list>
+ #include <initializer_list>
 #include <iostream>
-#include <cassert>
 
 template <typename T>
 class DArray

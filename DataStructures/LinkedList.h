@@ -121,6 +121,30 @@ public:
         m_size++;
     }
 
+    // Req 001 This function shall add a node to the front of the linked list
+    void AddNodeToFront(const T& data)
+    {
+        Node<T>* new_node{ new Node<T>{data} };
+        new_node->m_next = m_head;
+        m_head = new_node;
+        m_size++;
+    }
+
+    // Req 001 This function shall remove a node from the front of the linked list and return its value
+    // Req 002 This function shall throw an exception if the list is empty
+    T RemoveNodeFromFront()
+    {
+        if (m_size == 0)
+            throw - 1;
+        Node<T>* node_to_delete{ m_head };
+        m_head = m_head->m_next;
+        T value_to_return{ node_to_delete->m_data };
+        delete node_to_delete;
+        node_to_delete = nullptr;
+        m_size--;
+        return value_to_return;
+    }
+
     // Req 001 This function shall remove a node from the end of the linked list
     // Req 002 This function shall throw an exception when the linked list has no values
     T RemoveNode()

@@ -73,6 +73,34 @@ TEST(AddNodeAtIndex, Req002) {
     EXPECT_NO_THROW(list.AddNode(1, 1));
 }
 
+TEST(AddNodeToFront, Req001) {
+    LinkedList<int> list{};
+
+    list.AddNodeToFront(5);
+    list.AddNodeToFront(4);
+    list.AddNodeToFront(3);
+
+    EXPECT_EQ(3, list[0]);
+    EXPECT_EQ(4, list[1]);
+    EXPECT_EQ(5, list[2]);
+}
+
+TEST(RemoveNodeFromFront, Req001) {
+    LinkedList<int> list{};
+
+    list.AddNodeToFront(5);
+    list.AddNodeToFront(4);
+    list.AddNodeToFront(3);
+
+    EXPECT_EQ(3, list.RemoveNodeFromFront());
+}
+
+TEST(RemoveNodeFromFront, Req002) {
+    LinkedList<int> list{};
+
+    EXPECT_ANY_THROW(list.RemoveNodeFromFront());
+}
+
 TEST(RemoveNodeFromEnd, Req001) {
     LinkedList<int> list{};
 

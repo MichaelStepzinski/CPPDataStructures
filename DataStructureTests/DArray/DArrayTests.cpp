@@ -5,7 +5,7 @@
 //
 
 #include "pch.h"
-#include "DArray/DArray.h"
+#include "DataStructures/DArray.h"
 
 TEST(DArrayConstructors, DArrayDefaultConstructorReq001)
 {
